@@ -1,0 +1,149 @@
+body {
+    background-color: #2d2d2e;
+    margin: 0px 80px 80px 80px;
+}
+
+.header {
+    width: 100%;
+    height: 120px;
+    text-align: center;
+    background-color: #222324;
+    margin-top: 10px;
+    border-style: solid;
+    border-color: #ffffff;
+    border-radius: 15px;
+}
+
+a:link,
+a:visited {
+    background-color: #222324;
+    color: white;
+    padding: 25px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: auto;
+    font-size: 50px;
+    font-family: 'Roboto', arial, sans-serif;
+}
+
+.Welcome {
+    width: 100%;
+    color: rgb(124, 124, 124);
+    font-family: 'Roboto', arial, sans-serif;
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    flex-grow: 0;
+    width: 100%;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.two-column-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin-top: 2rem;
+    width: 100%;
+    flex-grow: 1;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.column {
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 0;
+}
+
+.column:first-child {
+    flex-grow: 2;
+    margin-right: 2rem;
+}
+
+.column:last-child {
+    flex-grow: 1;
+    margin-left: 2rem;
+}
+
+.notes-cards-wrapper {
+    width: 100%;
+    flex-grow: 1;
+    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+li {
+    height: 200vh
+}
+
+input {
+    background-color: #CCFF3B;
+    padding: .25em .5em;
+    border: 0;
+    color: black;
+    font-size: 1em;
+    font-family: 'Montserrat';
+    margin: .5em 0 1em;
+    font-weight: 500;
+    resize: none;
+}
+
+input[type="submit"] {
+    font-weight: 600;
+    padding: .4em .8em;
+    margin-right: 0;
+    font-size: 1rem;
+}
+
+.intLink {
+    cursor: pointer;
+}
+
+img.intLink {
+    border: 0;
+}
+
+.toolBar1 select {
+    font-size: 10px;
+}
+
+.toolBar2 {
+    background-color: white;
+    border: #2d2d2e 20px;
+    margin: 5px 0 5px 0;
+    border-radius: 5px;
+}
+
+#textBox {
+    width: 540px;
+    height: 200px;
+    border: 1px #000000 solid;
+    border-radius: 5px;
+    padding: 12px;
+    overflow: scroll;
+    background-color: #CCFF3B;
+}
+
+.checkbox {
+    display: block;
+    background-color: #2d2d2e;
+    color: #2d2d2e;
+}
+
+#textBox #sourceText {
+    padding: 0;
+    margin: 0;
+    min-width: 498px;
+    min-height: 200px;
+}
+
+#editMode label {
+    cursor: pointer;
+}

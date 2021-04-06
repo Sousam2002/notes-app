@@ -4,30 +4,79 @@
 <head>
     <meta charset="utf-8">
     <title>Login for Notes-App</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
-    <div class="login-box">
-        <h1>Login</h1>
-        <div class="textbox">
-            <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username">
+    <div class="row">
+        <div class="col-md-6 mx-auto p-0">
+            <div class="card">
+                <div class="login-box">
+                    <div class="login-snip"> <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Log in</label> <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+
+                        <div class="login-space">
+
+                            <div id="user_div" class="login">
+                                <div class="group"> <label for="user" class="label">Email Address</label> <input id="user" type="text" class="input" placeholder="Enter your Email Address"> </div>
+                                <div class="group"> <label for="pass" class="label">Password</label> <input id="pass" type="password" class="input" data-type="password" placeholder="Enter your password"> </div>
+                                <div class="group"> <input id="check" type="checkbox" class="check" checked> <label for="check"><span class="icon"></span> Keep me Signed in</label> </div>
+                                <div class="group">
+                                    <a href="notes-app.html" class="button" value="Sign Up" type="submit">Sign In</a></div>
+                                <p class="text">OR</p>
+                                <div class="social-menu">
+
+                                    <ul>
+                                        <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                                        <li><a href=""><i class="fab fa-google"></i></a></li>
+
+                                    </ul>
+                                </div>
+                                <div class="hr"></div>
+                                <div class="foot"> <a href="#">Forgot Password?</a> </div>
+                            </div>
+                            <div id="login_div" class="sign-up-form">
+                                <div class="group"> <label for="user" class="label" id="username_field">Username</label> <input id="user" type="text" class="input" placeholder="Create your Username"> </div>
+                                <div class="group"> <label for="pass" class="label" id="password_field">Password</label> <input id="pass" type="password" class="input" data-type="password" placeholder="Create your password"> </div>
+
+                                <div class="group"> <label for="pass" class="label" id="email_field">Email Address</label> <input id="pass" type="text" class="input" placeholder="Enter your email address"> </div>
+                                <div class="group">
+                                    <a href="notes-app.html" class="button" value="Sign Up" type="submit">Sign Up</a>
+                                </div>
+                                <div class="hr"></div>
+                                <div class="foot"> <label for="tab-1">Already Member?</label> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="textbox">
-            <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password">
-        </div>
-
-        <input type="button" class="btn" value="Log in">
-        <h6>
-            <center>If you are new to Notes-App then,</center>
-        </h6>
-        <input type="button" class="btn" value="Sign up">
-
     </div>
 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyBrnt3r8k3Gdj3pMWdDFj65o6jzCxH8xFA",
+            authDomain: "notes-app-eade3.firebaseapp.com",
+            projectId: "notes-app-eade3",
+            storageBucket: "notes-app-eade3.appspot.com",
+            messagingSenderId: "515638367576",
+            appId: "1:515638367576:web:9810a4371eba6f971d012d",
+            measurementId: "G-F8W0G75RD6"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="login.js"></script>
 </body>
 
 </html>
