@@ -17,6 +17,9 @@
      alert("You first need to Sign-In");
  }
 
+ function final() {
+     alert("You have sucessfully signed-in! Now go to Log-in and enter your details to proceed.Login link is present below sign-in button. ")
+ }
 
 
 
