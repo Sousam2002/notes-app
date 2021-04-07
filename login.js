@@ -1,40 +1,55 @@
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-        // User is signed in.
+ // Your web app's Firebase configuration
+ // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+ var firebaseConfig = {
+     apiKey: "AIzaSyBrnt3r8k3Gdj3pMWdDFj65o6jzCxH8xFA",
+     authDomain: "notes-app-eade3.firebaseapp.com",
+     projectId: "notes-app-eade3",
+     storageBucket: "notes-app-eade3.appspot.com",
+     messagingSenderId: "515638367576",
+     appId: "1:515638367576:web:9810a4371eba6f971d012d",
+     measurementId: "G-F8W0G75RD6"
+ };
+ // Initialize Firebase
+ firebase.initializeApp(firebaseConfig);
+ firebase.analytics();
 
-        document.getElementById("user_div").style.display = "block";
-        document.getElementById("login_div").style.display = "none";
-
-        var user = firebase.auth().currentUser;
-
+ function Home() {
+     alert("You first need to Sign-In");
+ }
 
 
-    } else {
-        // No user is signed in.
 
-        document.getElementById("user_div").style.display = "none";
-        document.getElementById("login_div").style.display = "block";
 
-    }
-});
+ const button = document.querySelector('#finalSubmit');
+ let flag = document.querySelector(".flag");
 
-function login() {
 
-    var userEmail = document.getElementById("email_field").value;
-    var userPass = document.getElementById("password_field").value;
+ button.addEventListener('submit', (e) => {
+     e.preventDefault();
 
-    firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
+     var name = document.querySelector("#Name").value;
+     let email = document.querySelector("#email").value;
+     let password = document.querySelector("#password").value;
 
-        window.alert("Error : " + errorMessage);
 
-        // ...
-    });
+     firebase.auth().createUserWithEmailAndPassword(email, password)
+         .then(() => {
+             let ID = firebase.auth().currentUser.uid;
+             firebase.database().ref('User/' + ID).set({
+                 Name: name,
+                 email: email
+             })
+             window.alert('registration sucessfull');
+         })
+         .then(() => {
+             flag.classList.remove('none');
+         })
+         .catch((error) => {
+             let errorcode = error.code;
+             let errormsg = error.message;
 
-}
+             window.alert('Something went wrong', errorcode, errormsg);
+         })
 
-function logout() {
-    firebase.auth().signOut();
-}
+     document.querySelector("#contactForm").reset();
+ })

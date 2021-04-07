@@ -3,48 +3,51 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Login for Notes-App</title>
+    <title>Sign Up for Notes-App</title>
     <link rel="stylesheet" href="login.css">
+
 </head>
 
 <body>
+    <div class="nav">
+        <button class="btn2" onclick="Home()"><span>Homepage</span></button><br>
+        <div class="dropdown" style="float:right;">
+            <button class="btn1"><span>What is Notes-App?</span></button>
+            <div class="dropdown-content">
+                <h3 style="text-align: center;"><b>What Is Notes-App?</b></h3><br>
+                <p style="text-align: center;">A simple website to login,view all the notes written previously,add new notes to the database.It is a website where one can login ,create notes and save them for future reference.One can edit the notes whenever they want to .It is an efficient
+                    way to capture what's in your mind.</p>
+            </div>
+        </div><br>
+
+    </div>
     <div class="row">
         <div class="col-md-6 mx-auto p-0">
             <div class="card">
                 <div class="login-box">
-                    <div class="login-snip"> <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Log in</label> <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+                    <div class="login-snip"> <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign Up</label> <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
 
                         <div class="login-space">
 
                             <div id="user_div" class="login">
-                                <div class="group"> <label for="user" class="label">Email Address</label> <input id="user" type="text" class="input" placeholder="Enter your Email Address"> </div>
-                                <div class="group"> <label for="pass" class="label">Password</label> <input id="pass" type="password" class="input" data-type="password" placeholder="Enter your password"> </div>
-                                <div class="group"> <input id="check" type="checkbox" class="check" checked> <label for="check"><span class="icon"></span> Keep me Signed in</label> </div>
-                                <div class="group">
-                                    <a href="notes-app.html" class="button" value="Sign Up" type="submit">Sign In</a></div>
-                                <p class="text">OR</p>
-                                <div class="social-menu">
+                                <form id="contactForm">
+                                    <div class="group"> <label for="user" class="label" id="Name">Username</label> <input id="Name" type="text" class="input" placeholder="Create your Username"> </div>
+                                    <div class="group"> <label for="pass" class="label" id="password">Password</label> <input id="password" type="password" class="input" data-type="password" placeholder="Create your password"> </div>
 
-                                    <ul>
-                                        <li><a href=""><i class="fab fa-facebook"></i></a></li>
-                                        <li><a href=""><i class="fab fa-google"></i></a></li>
+                                    <div class="group"> <label for="pass" class="label" id="email">Email Address</label> <input id="email" type="text" class="input" placeholder="Enter your email address"> </div>
+                                    <div class="group">
 
-                                    </ul>
-                                </div>
-                                <div class="hr"></div>
-                                <div class="foot"> <a href="#">Forgot Password?</a> </div>
+                                        <button id="finalSubmit" class="button" value="Sign Up" type="submit"><a href="notes-app.html">Sign-in</a></button>
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="foot">
+                                        <div>
+                                            <label for="oldUser">Already Member?</label>
+                                            <a id="oldUser" href="index2.html">Log-In</a></div>
+                                    </div>
+                                </form>
                             </div>
-                            <div id="login_div" class="sign-up-form">
-                                <div class="group"> <label for="user" class="label" id="username_field">Username</label> <input id="user" type="text" class="input" placeholder="Create your Username"> </div>
-                                <div class="group"> <label for="pass" class="label" id="password_field">Password</label> <input id="pass" type="password" class="input" data-type="password" placeholder="Create your password"> </div>
 
-                                <div class="group"> <label for="pass" class="label" id="email_field">Email Address</label> <input id="pass" type="text" class="input" placeholder="Enter your email address"> </div>
-                                <div class="group">
-                                    <a href="notes-app.html" class="button" value="Sign Up" type="submit">Sign Up</a>
-                                </div>
-                                <div class="hr"></div>
-                                <div class="foot"> <label for="tab-1">Already Member?</label> </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -59,22 +62,7 @@
      https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>
 
-    <script>
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        var firebaseConfig = {
-            apiKey: "AIzaSyBrnt3r8k3Gdj3pMWdDFj65o6jzCxH8xFA",
-            authDomain: "notes-app-eade3.firebaseapp.com",
-            projectId: "notes-app-eade3",
-            storageBucket: "notes-app-eade3.appspot.com",
-            messagingSenderId: "515638367576",
-            appId: "1:515638367576:web:9810a4371eba6f971d012d",
-            measurementId: "G-F8W0G75RD6"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-    </script>
+
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="login.js"></script>
 </body>
