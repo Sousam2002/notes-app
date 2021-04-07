@@ -61,6 +61,7 @@ function printDoc() {
 let addBtn = document.getElementById("addBtn");
 addBtn.addEventListener("click", function(e) {
     e.preventDefault();
+    var d = Date();
     let textBox = document.getElementById("textBox");
     let notes = localStorage.getItem("notes");
     if (notes == null) {
@@ -68,11 +69,21 @@ addBtn.addEventListener("click", function(e) {
     } else {
         notesObj = JSON.parse(notes);
     }
+    let myobj = {
+
+
+        date: d
+    }
+    notesObj.push(myobj);
+
     notesObj.push(textBox.innerHTML);
     localStorage.setItem("notes", JSON.stringify(notesObj));
     textBox.value = "";
     showNotes();
 });
+
+
+
 
 function showNotes() {
     let notes = localStorage.getItem("notes");
@@ -97,6 +108,8 @@ function showNotes() {
                           margin-left:25px;
                           font-weight: 500;
                           resize: none;" id="${index}"onclick="deleteNote(this.id)" class="btn btn-primary">Delete Note</button>
+                          <h6><i>${element.date}</i></h6>
+
                           <div class="btndiv none"> <span style="padding: auto;" class="btns btn btn-light btn-sm nopointer"><i class="bi bi-calendar-check" style="padding: auto;"></i></span></div>
                       </div>
                   </div>`;
@@ -109,21 +122,7 @@ function showNotes() {
     }
 }
 
-let final = timestampToDate(timestamp);
-console.log(final);
-btn3.innerHTML = `<i class="bi bi-calendar-check"></i> \u00A0\u00A0 ${final}`;
-const timestampToDate = timestamp => {
 
-    let t = timestamp.toDate();
-
-    let date = t.getDate();
-    let month = t.getMonth();
-    let year = t.getFullYear();
-    let hour = t.getHours();
-    let min = t.getMinutes();
-    let final = `Date: ${date}-${month}-${year} \u00A0Time: ${hour}:${min}`;
-    return final;
-}
 
 
 
